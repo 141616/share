@@ -1,0 +1,508 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>123</title>
+<style>
+html,body {
+  padding: 0;
+  margin: 0;
+}
+
+.guardian-share .header {
+  height: 60px;
+  background: #F5F5F5;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  top: 0;
+}
+
+.guardian-share .header .icon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.guardian-share .header .icon img {
+  border: 1px solid transparent;
+  border-radius: 10px;
+}
+
+.guardian-share .header .title {
+  position: absolute;
+  font-size: 12px;
+  left: 70px;
+  top: 14px;
+}
+
+.guardian-share .header .title .appName {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.guardian-share .header .title .appText {
+	font-size: 10px;
+  line-height: 20px;
+  color: #999;
+}
+
+.guardian-share .header .open {
+  width: 57px;
+  height: 28px;
+  line-height: 28px;
+  border: 1px solid #3893f0;
+  position: absolute;
+  right: 14px;
+  top: 15px;
+  text-align: center;
+  border-radius: 2px;
+  color: #3893f0;
+  font-size: 12px;
+}
+
+.guardian-share .content {
+  background: url(./guard_share.png);
+  background-repeat: no-repeat;
+  padding: 16px 5%;
+  margin: 60px auto 0;
+  background-size: 100% 100%;
+  position: relative;
+  height: 512px;
+}
+
+.guardian-share .content .description {
+  width: 100%;
+  height: 55px;
+  overflow: hidden;
+}
+
+.guardian-share .content .description .icon {
+  display: inline-block;
+  width: 25%;
+  height: 50px;
+  background: url(http://777.nd.com.cn/home/images/sub_script.png);
+  vertical-align: middle
+}
+
+.guardian-share .content .description .tip {
+  display: inline-block;
+  font-size: 13px;
+  padding-left: 5%;
+  width: 65%;
+  color: #fff;
+  vertical-align: middle;
+}
+
+.guardian-share .content .description .tip .cardLevel {
+  font-weight: bold;
+  font-size: 13px;
+  color: #ffea00;
+}
+
+.guardian-share .content .cardImg {
+  height: 250px;
+  margin: 22px auto 78px;
+  width: 200px;
+  background: #b0e7ff;
+  position: relative;
+  border-radius: 5px;
+  display: none
+}
+
+.guardian-share .content .cardImg .avatar {
+  height: 170px;
+  width: 190px;
+  padding: 5px;
+}
+
+.guardian-share .content .cardImg .nameInfo {
+  text-align: center;
+  margin: 6px;
+}
+
+.guardian-share .content .cardImg .nameInfo .nameIcon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.guardian-share .content .cardImg .nameInfo .userName {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 14px;
+  color: #3099CA;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #e4f7ff;
+}
+
+.guardian-share .content .cardImg .priceInfo {
+  margin: 2px auto;
+  line-height: 20px;
+  color: #3099CA;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #e4f7ff;
+}
+
+.guardian-share .content .cardImg .state {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  width: 55px;
+  height: 20px;
+  background: #594A4B;
+  border: 1px solid transparent;
+  border-radius: 10px;
+}
+
+.guardian-share .content .cardImg .state .stateIcon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+}
+
+.guardian-share .content .cardImg .state .stateIcon img {
+  border: 1px solid transparent;
+  border-radius: 11px;
+}
+
+.guardian-share .content .cardImg .state .stateText {
+  margin-left: 21px;
+  font-size: 10px;
+  color: #FFF;
+  line-height: 20px;
+}
+
+.guardian-share .content .cardImg .level {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 35px;
+  height: 35px;
+  background: #ccc;
+  border-radius: 18px;
+  font-size: 10px;
+  color: #FFF;
+  line-height: 12px;
+  text-align: center;
+  text-shadow: 1px 1px 1px #2a6edf;
+}
+
+.guardian-share .content .cardImg .level .levelCount {
+  padding-top: 6px;
+}
+
+.guardian-share .content .cardImg .level .levelText {
+  font-size: 8px;
+}
+
+.guardian-share .recommand {
+  font-size: 13px;
+  padding: 20px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.guardian-share .friends {
+  width: 240px;
+  font-size: 14px;
+  margin: 10px auto;
+}
+
+.guardian-share .loadMore {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000;
+  margin: 5px auto;
+}
+
+.guardian-share .features {
+  padding-top: 20px;
+}
+
+.guardian-share .features .item {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.guardian-share .item .itemTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.guardian-share .item .itemImage {
+  width: 150px;
+  height: 100px;
+  border: 1px solid #ccc;
+  margin: 30px auto;
+}
+
+.guardian-share .item .itemContent {
+  max-height: 65px;
+}
+
+.guardian-share .page{
+  margin: 40px auto;
+}
+
+.guardian-share .features .award {
+  width: 300px;
+}
+
+.guardian-share .features .effects {
+  width: 300px;
+}
+/* lhh */
+.guardian-share .content .rank {
+  width: 100%;
+  height: 220px;
+  margin: 43px auto 55px;
+  color: #fff;
+  font-weight: bold;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+}
+.guardian-share .content .rank .rankNameWrapper {
+  height: 2.5rem;
+  position: relative;
+}
+.guardian-share .content .rank .rankName {
+  top: -1rem;
+  position: absolute;
+  width: 100%;
+  height: 2.5rem;
+  line-height: 2.7;
+  font-size: 15px;
+  background-size: 64% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.guardian-share .content .rank .rank-item {
+  float: left;
+  width: 33%;
+  height: 220px;
+  position: relative;
+  margin-top: -2.5rem;
+  font-size: 12px;
+}
+.guardian-share .content .rank .second {
+  margin-left: 10px;
+  color: #8AA3C3;
+}
+.guardian-share .content .rank .first {
+  margin-left: -8px;
+  color: #E99900;
+}
+.guardian-share .content .rank .third {
+  margin-left: -4px;
+  color: #DF8159;
+}
+
+/* 卡牌容器 */
+.guardian-share .content .rank .cardWrapper {
+  width: 100%;
+  position: absolute;
+}
+.guardian-share .content .rank .second .cardWrapper {
+  bottom: 2.8rem;
+}
+.guardian-share .content .rank .first .cardWrapper {
+  bottom: 3.6rem;
+}
+.guardian-share .content .rank .third .cardWrapper {
+  bottom: 2.3rem;
+}
+/* 卡牌 */
+.guardian-share .content .rank .card {
+  margin: auto;
+  position: relative;
+  padding: 3px 2px;
+  border-radius: 5px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.guardian-share .content .rank .second .card {
+  width: 72%;
+  background-image: url('./card_bg_second.png');
+}
+.guardian-share .content .rank .first .card {
+  width: 80%;
+  background-image: url('./card_bg_first.png');
+}
+.guardian-share .content .rank .third .card {
+  width: 67%;
+  background-image: url('./card_bg_third.png');
+}
+
+/* 卡牌照片 */
+.guardian-share .content .rank .cardImage {
+  width: 100%;
+  border-radius: 7px;
+}
+.guardian-share .content .rank .cardPic {
+  margin: auto;
+  padding: 0;
+  border-radius: 7px;
+  background-size: 100%;
+}
+/* 卡牌排名图标 */
+.guardian-share .content .rank  .cardIcon {
+  position: absolute;
+}
+.guardian-share .content .rank .second .cardIcon {
+  top: -6px;
+  left: -6px;
+  width: 1.4rem;
+}
+.guardian-share .content .rank .first .cardIcon {
+  top: -6px;
+  left: -6px;
+  width: 1.7rem;
+}
+.guardian-share .content .rank .third .cardIcon {
+  top: -6px;
+  left: -6px;
+  width: 1.4rem;
+}
+/* 卡牌名称 */
+.guardian-share .content .rank .cardName {
+  padding: 2px 0;
+  text-align: center;
+}
+
+/* 卡牌身价 */
+.guardian-share .content .rank .price {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+.guardian-share .content .rank .second .price {
+  padding: 1rem 0;
+}
+.guardian-share .content .rank .first .price {
+  padding: 1.375rem 0;
+}
+.guardian-share .content .rank .third .price {
+  padding: 0.75rem 0;
+}
+
+</style>
+</head>
+	<body>
+  <div class="guardian-share">
+    <div class="header">
+      <div class="icon">
+        <img src="http://777.nd.com.cn/home/images/sub_script.png" width="100%" height="100%" />
+      </div>
+			<div class="title">
+      	<div class="appName">天使守护者</div>
+        <div class="appText">守护你的TA，可以这样简单而有趣！</div>
+      </div>
+      <div class="open">打开</div>
+    </div>
+    <div class="content">
+      <div class="description">
+        <div class="icon"></div>
+        <div class="tip">我可是费尽千辛万苦才将陈小双守护成为 <span class="cardLevel">0</span> 级的青铜骑士哦！</div>
+      </div>
+      <div class="rank" style="background-image: url('./rank_bg_min1.png')">
+        <div class="rankNameWrapper">
+          <div class="rankName" style="background-image: url('./rank_title_bg1.png')">天使总身价榜</div>
+        </div>
+        <div class="rank-item second">
+          <div class="cardWrapper">
+            <div class="card">
+              <img class="cardImage" src="./card.jpg">
+              <img class="cardIcon" src="./icon_second.png">
+              <div class="cardName">陈小双</div>
+            </div>
+          </div>
+          <div class="price">身价：190000</div>
+        </div>
+        <div class="rank-item first">
+          <div class="cardWrapper">
+            <div class="card">
+              <img class="cardImage"  src="./card.jpg">
+              <img class="cardIcon" src="./icon_first.png">
+              <div class="cardName">陈小双</div>
+            </div>
+          </div>
+          <div class="price">身价：280000</div>
+        </div>
+        <div class="rank-item third">
+          <div class="cardWrapper">
+            <div class="card">
+              <img class="cardImage"  src="./card.jpg">
+              <img class="cardIcon" src="./icon_third.png">
+              <div class="cardName">陈小双</div>
+            </div>
+          </div>
+          <div class="price">身价：158200</div>
+        </div>
+      </div>
+      <div class="cardImg">
+        <div class="avatar">
+            <img src="http://777.nd.com.cn/home/images/ex_pic04.jpg" width="100%" height="100%" />
+        </div>
+        <div class="nameInfo">
+          <div class="nameIcon">
+            <img src="http://777.nd.com.cn/home/images/ex_pic04.jpg" width="100%" height="100%" />
+          </div>
+          <div class="userName">陈小双</div>
+        </div>
+        <div class="priceInfo">身价 677700</div>
+        <div class="state">
+          <div class="stateIcon">
+            <img src="http://777.nd.com.cn/home/images/banner_20171114.jpg" width="100%" height="100%" />
+          </div>
+          <div class="stateText">学习中</div>
+        </div>
+        <div class="level">
+          <div class="levelCount">282</div>
+          <div class="levelText">LV</div>
+        </div>
+      </div>
+      <div class="recommand">加入守护，让你的守护学习医术、法律，替你打工卖命，还能掠夺其他好友哦！</div>
+    </div>
+  	<div class="features">
+      <div class="item">
+        <div class="itemTitle">真实的社交关系</div>
+        <div class="itemContent">基于真实社交关系，让你在游戏中遇见并守护你的朋友，同学。</div>
+        <div class="itemImage">
+          <img src="{{getDownLoadUrlByDentryId dentryId}}" width="100%" height="100%" />
+        </div>
+      </div>
+      <div class="item">
+        <div class="itemTitle">新颖的互动玩法</div>
+        <div class="itemContent">职业学习，工作生产，买卖交易，多种互动玩法，让你体验最新颖的社交卡牌游戏。</div>
+        <div class="itemImage">
+          <img src="{{getDownLoadUrlByDentryId dentryId}}" width="100%" height="100%" />
+        </div>
+      </div>
+    </div>
+    <div class="features">
+      <div class="item">
+        <div class="itemTitle">丰富的奖励打赏</div>
+        <div class="itemContent">满足TA的一切非分之想，这里只有你想不到，没有你找不到的。</div>
+        <div class="itemImage">
+          <img src="{{getDownLoadUrlByDentryId dentryId}}" width="100%" height="100%" />
+        </div>
+      </div>
+      <div class="item">
+        <div class="itemTitle">绚丽的游戏体验</div>
+        <div class="itemContent">谁说卡牌就不能酷炫，生动形象的动画效果，让你身临其境。</div>
+        <div class="itemImage">
+          <img src="{{getDownLoadUrlByDentryId dentryId}}" width="100%" height="100%" />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
